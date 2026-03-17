@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <!-- saved from url=(0033)https://1v1-lol-eight.vercel.app/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Geometry Dash">
-  <title>Geometry Dash</title>
-  <style>
-    html, body {
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Geometry Dash" />
+    <title>
+      Geometry Dash
+    </title>
+    <style>
+      html, body {
       margin: 0;
       width: 100%;
       height: 100%;
@@ -120,7 +123,7 @@
       transition: box-shadow .15s, background-color .15s, transform .1s, opacity .1s;
     }
 
-    .play-btn__ctrl[disabled="disabled"] {
+    .play-btn__ctrl[disabled=&#34;disabled&#34;] {
       opacity: .5;
     }
 
@@ -148,62 +151,64 @@
       height: 100% !important;
       width: 100% !important;
     }
-  </style>
+    </style>
+    <script>
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      (navigator.maxTouchPoints &gt; 1 &amp;&amp; /Macintosh/i.test(navigator.userAgent));
 
-  <script>
-    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-      (navigator.maxTouchPoints > 1 && /Macintosh/i.test(navigator.userAgent));
-
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    const _isMobile = (isMobile || isTouchDevice) && window.matchMedia('(max-width: 768px)').matches;
+    const isTouchDevice = &#39;ontouchstart&#39; in window || navigator.maxTouchPoints &gt; 0;
+    const _isMobile = (isMobile || isTouchDevice) &amp;&amp; window.matchMedia(&#39;(max-width: 768px)&#39;).matches;
 
     var isNewWindow = false;
     var hasVideoPreview = false;
-  </script>
-</head>
-<body>
-  <div class="frame-box-game" id="frame-container">
-    <div class="game-preview" style="display: none;">
-      <div class="game-preview-bgi" style="background-image: url(&#39;https://geometry-games.io/cache/data/image/game/homepage/geometry-game-m320x190.webp&#39;)"></div>
-      <div class="game-preview__content">
-        <div class="game-preview__logo">
-          <img src="./Geometry Dash_files/geometry-game-m320x190.webp" alt="Play Geometry Dash now!">
+    </script>
+  </head>
+  <body>
+    <div class="frame-box-game" id="frame-container">
+      <div class="game-preview" style="display: none;">
+        <div class="game-preview-bgi" style="background-image: url(&#39;https://geometry-games.io/cache/data/image/game/homepage/geometry-game-m320x190.webp&#39;)">
         </div>
-        <div class="game-preview__title">Geometry Dash</div>
-        <div class="game-preview__run">
-          <div class="play-btn">
-            <button id="show-embed" style="display: inline-block;" data-width="800" data-height="600" data-iframe="https://geometry-dash-lite.1games.io/" type="button" class="play-btn__ctrl">Play</button>
-            <div id="loader_game_iframe" style="display: none;"></div>
+        <div class="game-preview__content">
+          <div class="game-preview__logo">
+            <img src="./Geometry Dash_files/geometry-game-m320x190.webp" alt="Play Geometry Dash now!" />
+          </div>
+          <div class="game-preview__title">
+            Geometry Dash
+          </div>
+          <div class="game-preview__run">
+            <div class="play-btn">
+              <button id="show-embed" style="display: inline-block;" data-width="800" data-height="600" data-iframe="https://geometry-dash-lite.1games.io/" type="button" class="play-btn__ctrl">
+                Play
+              </button>
+              <div id="loader_game_iframe" style="display: none;">
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div id="game-code" class="game-frame" data-id="1" style="display: block;">
+        <iframe class="game-iframe" id="game-area" src="./Geometry Dash_files/saved_resource(1).html" width="800" height="600" allow="autoplay; fullscreen; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-same-origin allow-downloads" scrolling="no" frameborder="0" allowfullscreen="">
+        </iframe>
+      </div>
+      <div id="game-code-mobile" class="game-frame" style="display: none;" data-id="1">
+        <iframe class="game-iframe" id="game-area-mobile" src="./Geometry Dash_files/saved_resource(2).html" width="800" height="600" allow="autoplay; fullscreen; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-same-origin allow-downloads" scrolling="no" frameborder="0" allowfullscreen="">
+        </iframe>
+      </div>
+      <script>
+        if (!isMobile || !isTouchDevice) {
+        window.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+          let prerollButton = document.querySelector(&#34;#show-embed&#34;);
+          let loading_iframe = document.querySelector(&#34;#loader_game_iframe&#34;);
 
-    <div id="game-code" class="game-frame" data-id="1" style="display: block;">
-      <iframe class="game-iframe" id="game-area" src="./Geometry Dash_files/saved_resource(1).html" width="800" height="600" allow="autoplay; fullscreen; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-same-origin allow-downloads" scrolling="no" frameborder="0" allowfullscreen="">
-      </iframe>
-    </div>
+          if (prerollButton) prerollButton.style.display = &#39;inline-block&#39;;
+          if (loading_iframe) loading_iframe.style.display = &#39;none&#39;;
 
-    <div id="game-code-mobile" class="game-frame" style="display: none;" data-id="1">
-      <iframe class="game-iframe" id="game-area-mobile" src="./Geometry Dash_files/saved_resource(2).html" width="800" height="600" allow="autoplay; fullscreen; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-same-origin allow-downloads" scrolling="no" frameborder="0" allowfullscreen="">
-      </iframe>
-    </div>
-
-    <script>
-      if (!isMobile || !isTouchDevice) {
-        window.addEventListener("DOMContentLoaded", function () {
-          let prerollButton = document.querySelector("#show-embed");
-          let loading_iframe = document.querySelector("#loader_game_iframe");
-
-          if (prerollButton) prerollButton.style.display = 'inline-block';
-          if (loading_iframe) loading_iframe.style.display = 'none';
-
-          if (!isNewWindow && prerollButton) {
-            prerollButton.addEventListener('click', e => {
+          if (!isNewWindow &amp;&amp; prerollButton) {
+            prerollButton.addEventListener(&#39;click&#39;, e =&gt; {
               loadGameIframe();
             });
 
-            if (!_isMobile && !hasVideoPreview) {
+            if (!_isMobile &amp;&amp; !hasVideoPreview) {
               prerollButton.click();
             }
           }
@@ -213,78 +218,78 @@
       }
 
       function loadGameIframe() {
-        const showEmbed = document.getElementById("show-embed");
-        const link_iframe = showEmbed ? showEmbed.getAttribute('data-iframe') : "https://geometry-dash-lite.1games.io/";
-        const width = showEmbed ? showEmbed.getAttribute('data-width') : "800";
-        const height = showEmbed ? showEmbed.getAttribute('data-height') : "600";
+        const showEmbed = document.getElementById(&#34;show-embed&#34;);
+        const link_iframe = showEmbed ? showEmbed.getAttribute(&#39;data-iframe&#39;) : &#34;https://geometry-dash-lite.1games.io/&#34;;
+        const width = showEmbed ? showEmbed.getAttribute(&#39;data-width&#39;) : &#34;800&#34;;
+        const height = showEmbed ? showEmbed.getAttribute(&#39;data-height&#39;) : &#34;600&#34;;
 
         if (_isMobile) {
-          const gameCode = document.getElementById("game-code");
-          if (gameCode) gameCode.style.display = 'none';
+          const gameCode = document.getElementById(&#34;game-code&#34;);
+          if (gameCode) gameCode.style.display = &#39;none&#39;;
 
-          document.body.classList.add("isFullscreen");
+          document.body.classList.add(&#34;isFullscreen&#34;);
 
-          document.querySelectorAll(".game_area_frame").forEach(function (el) {
-            el.classList.add("frame_fix_mobile");
+          document.querySelectorAll(&#34;.game_area_frame&#34;).forEach(function (el) {
+            el.classList.add(&#34;frame_fix_mobile&#34;);
           });
 
-          const gameCodeMobile = document.getElementById("game-code-mobile");
+          const gameCodeMobile = document.getElementById(&#34;game-code-mobile&#34;);
           if (gameCodeMobile) {
-            const iframe = gameCodeMobile.querySelector("iframe");
+            const iframe = gameCodeMobile.querySelector(&#34;iframe&#34;);
             if (iframe) {
               iframe.src = link_iframe;
-              gameCodeMobile.style.display = 'block';
+              gameCodeMobile.style.display = &#39;block&#39;;
             }
           }
 
-          document.querySelectorAll(".game-preview").forEach(function (el) {
-            el.style.display = 'none';
+          document.querySelectorAll(&#34;.game-preview&#34;).forEach(function (el) {
+            el.style.display = &#39;none&#39;;
           });
         } else {
-          const gameCodeMobile = document.getElementById("game-code-mobile");
-          if (gameCodeMobile) gameCodeMobile.style.display = 'none';
+          const gameCodeMobile = document.getElementById(&#34;game-code-mobile&#34;);
+          if (gameCodeMobile) gameCodeMobile.style.display = &#39;none&#39;;
 
-          document.body.classList.remove("isFullscreen");
+          document.body.classList.remove(&#34;isFullscreen&#34;);
 
-          document.querySelectorAll(".game_area_frame").forEach(function (el) {
-            el.classList.remove("frame_fix_mobile");
+          document.querySelectorAll(&#34;.game_area_frame&#34;).forEach(function (el) {
+            el.classList.remove(&#34;frame_fix_mobile&#34;);
           });
 
-          const gameCode = document.getElementById("game-code");
+          const gameCode = document.getElementById(&#34;game-code&#34;);
           if (gameCode) {
-            const iframe = gameCode.querySelector("iframe");
+            const iframe = gameCode.querySelector(&#34;iframe&#34;);
             if (iframe) {
               iframe.src = link_iframe;
               iframe.width = width;
               iframe.height = height;
-              gameCode.style.display = 'block';
+              gameCode.style.display = &#39;block&#39;;
             }
           }
 
-          document.querySelectorAll(".game-preview").forEach(function (el) {
-            el.style.display = 'none';
+          document.querySelectorAll(&#34;.game-preview&#34;).forEach(function (el) {
+            el.style.display = &#39;none&#39;;
           });
         }
 
-        const mobileNav = document.getElementById("mobile-nav");
+        const mobileNav = document.getElementById(&#34;mobile-nav&#34;);
         if (mobileNav) {
-          mobileNav.addEventListener('click', function () {
-            document.body.classList.remove("isFullscreen");
-            document.querySelectorAll(".game_area_frame").forEach(function (el) {
-              el.classList.remove("frame_fix_mobile");
+          mobileNav.addEventListener(&#39;click&#39;, function () {
+            document.body.classList.remove(&#34;isFullscreen&#34;);
+            document.querySelectorAll(&#34;.game_area_frame&#34;).forEach(function (el) {
+              el.classList.remove(&#34;frame_fix_mobile&#34;);
             });
-            document.querySelectorAll(".game-preview").forEach(function (el) {
-              el.style.display = 'block';
+            document.querySelectorAll(&#34;.game-preview&#34;).forEach(function (el) {
+              el.style.display = &#39;block&#39;;
             });
-            const gameCodeMobile = document.getElementById("game-code-mobile");
-            if (gameCodeMobile) gameCodeMobile.style.display = 'none';
+            const gameCodeMobile = document.getElementById(&#34;game-code-mobile&#34;);
+            if (gameCodeMobile) gameCodeMobile.style.display = &#39;none&#39;;
           });
         }
       }
 
       function setupEnhancedIframeMonitoring() {
-        setTimeout(() => {
-          const gameIframe = document.getElementById("game-area");
+        setTimeout(() =&gt; {
+          const gameIframe = document.getElementById(&#34;game-area&#34;);
           if (gameIframe) {
             window.gameIframeState = {
               loaded: false,
@@ -292,16 +297,16 @@
               src: gameIframe.src
             };
 
-            gameIframe.addEventListener('load', function () {
+            gameIframe.addEventListener(&#39;load&#39;, function () {
               window.gameIframeState.loaded = true;
 
-              if (this.src && this.src !== 'about:blank') {
+              if (this.src &amp;&amp; this.src !== &#39;about:blank&#39;) {
                 window.gameIframeState.src = this.src;
               }
 
-              setTimeout(() => {
+              setTimeout(() =&gt; {
                 window.gameIframeState.ready = true;
-                window.dispatchEvent(new CustomEvent('iframeContentReady', {
+                window.dispatchEvent(new CustomEvent(&#39;iframeContentReady&#39;, {
                   detail: {
                     iframe: this,
                     src: this.src,
@@ -311,21 +316,21 @@
               }, 3000);
             });
 
-            gameIframe.addEventListener('error', function () {
+            gameIframe.addEventListener(&#39;error&#39;, function () {
               window.gameIframeState.loaded = false;
               window.gameIframeState.ready = false;
             });
 
             let lastSrc = gameIframe.src;
-            const srcMonitor = setInterval(() => {
+            const srcMonitor = setInterval(() =&gt; {
               if (gameIframe.src !== lastSrc) {
                 lastSrc = gameIframe.src;
                 window.gameIframeState.src = gameIframe.src;
                 window.gameIframeState.ready = false;
 
-                setTimeout(() => {
+                setTimeout(() =&gt; {
                   window.gameIframeState.ready = true;
-                  window.dispatchEvent(new CustomEvent('iframeContentReady', {
+                  window.dispatchEvent(new CustomEvent(&#39;iframeContentReady&#39;, {
                     detail: {
                       iframe: gameIframe,
                       src: gameIframe.src,
@@ -336,12 +341,11 @@
               }
             }, 1000);
 
-            setTimeout(() => clearInterval(srcMonitor), 60000);
+            setTimeout(() =&gt; clearInterval(srcMonitor), 60000);
           }
         }, 200);
       }
-    </script>
-  </div>
-
-
-</body></html>
+      </script>
+    </div>
+  </body>
+</html>
